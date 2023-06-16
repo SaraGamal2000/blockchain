@@ -1,0 +1,258 @@
+.landing-page{
+    background:url(../../images/animated.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+   }
+   .navbar{
+     position: relative;
+ 
+   }
+   .navbar ul li a{
+     color: white  !important;
+     margin-left: 10px;
+     position: relative;
+     letter-spacing: 1px;
+
+     
+   }
+   .navbar ul li a::before{
+    content: "";
+    position: absolute !important; 
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.25s ease-out;
+   }
+   .navbar ul li a:not(.logging):hover::before{
+    width: 100%;
+   }
+   .nav-item a:hover{
+     opacity: 1;
+   }
+   .navbar-brand img{
+     width: 80px;
+     height: 80px;
+     
+   }
+   .navbar-brand{
+    color: white;
+   }
+   .icon
+   {
+     color: white;
+   }
+   .logging{
+    background-color: var(--PinkColor);
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+ 
+   }
+   .logging:hover{
+    letter-spacing: 1px;
+   }
+   .logging:active{
+    box-shadow: none;
+    transform: scale(.9);
+   }
+   .intro{
+    color: white;
+    font-size: 50px;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    right: 23%;
+    font-weight: bold;
+    
+   }
+   .intro span{
+    background-color: var(--PinkColor);
+    font-weight: bold !important;
+    padding: 5px;
+    font-size: 40px;
+   }
+   .font{
+    font-size: 13px;
+
+   }
+   .ourstory h1{
+    margin-top: 40px;
+    text-align: center;
+    font-size: 3.5em;
+
+  
+    color: var(--DarkBlue);
+   }
+
+  .storyParent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:60px;
+  }
+
+.imgdiv{
+  width: 30%;
+  margin-left: 50px;
+}
+.imgdiv img{
+max-width: 100%;
+}
+.storyParent p{
+  width: 60%;
+}
+footer{
+  background-color: var(--DarkBlue);
+  padding:100px;
+  text-align: center;
+  color: white;
+}
+
+footer span{
+  margin-right: 20px;
+  font-size: 18px;
+}
+footer div{
+  margin-bottom: 20px;
+}
+.Desc{
+  width: 60%;
+  margin-right: 20%;
+  font-size: 18px;
+ 
+}
+
+ .firstRow{
+margin: auto;
+float: none;
+} 
+
+.Row {
+  display: flex;
+  flex-wrap: wrap;
+  padding:  1em;
+  text-align: center;
+  justify-content: center;
+}
+.column {
+  width: 100%;
+  padding: 0.5em 0;
+}
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 3.5em;
+  color: var(--DarkBlue)
+}
+.Card {
+  height: 90%;
+  box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);
+  padding: 3.5em 1em;
+  border-radius: 0.6em;
+  color: #1f003b;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #ffffff;
+}
+.Card .img-container {
+  width: 8em;
+  height: 8em;
+  background-color: #0051B8;
+  padding: 0.5em;
+  border-radius: 50%;
+  margin: 0 auto 2em auto;
+}
+.Card img {
+  width: 100%;
+  border-radius: 50%;
+}
+.card h3 {
+  font-weight: 500;
+ 
+}
+
+.card p {
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0.5em 0 2em 0;
+  letter-spacing: 2px;
+}
+
+.icons {
+  width: 50%;
+  min-width: 180px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.Card a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.4em;
+}
+.Card:hover {
+  background: linear-gradient(#053A7C, #0051B8);
+  color: #ffffff;
+  scale: 1.1;
+}
+.Card:hover .img-container {
+  transform: scale(1.15);
+}
+@media screen and (min-width: 768px) {
+  section {
+    padding: 1em 7em;
+  }
+}
+@media screen and (min-width: 992px) {
+  section {
+    padding: 1em;
+  }
+  .Card {
+    padding: 5em 1em;
+  }
+  .column {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 1em;
+  }
+}
+
+.messageparent{
+  width: 50%;
+  margin-right: 30px;
+ 
+}
+.labeling{
+  display: block;
+  margin-bottom: 10px;
+}
+.inputtext{
+  outline: none;
+  border:1px solid #dedbdb;
+  border-radius: 5px;
+}
+
+.submit:hover{
+  letter-spacing: 2px;
+ 
+ }
+ .submit:active{
+  box-shadow: none;
+
+  transform: scale(.9);
+ }
+
+
+
+
+
+
+
+

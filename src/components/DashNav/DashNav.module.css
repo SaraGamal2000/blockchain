@@ -1,0 +1,23 @@
+.dashNav{
+    background-color: var(--DarkBlue);
+    width: 20%;
+    height: 100vh;
+    padding: 30px;
+    position: fixed;
+    top:0;
+    
+}
+
+.list{
+     display: flex;
+   
+    align-items: center;
+    margin-top: 70px;
+}
+
+.list p {
+    margin: 0;
+    color: white;
+    margin-right: 15px;
+    cursor: pointer;
+}

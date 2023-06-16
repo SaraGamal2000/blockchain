@@ -1,0 +1,97 @@
+.heading{
+  position: absolute;
+  top: 14%;
+  right: 22%;
+  display: flex;
+ 
+
+}
+heading a{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 50%;
+}
+.link{
+    position: absolute;
+    top:15%;
+    right: 72%;
+    background-color: var(--PinkColor);
+    color: white;
+    padding: 5px 15px ;
+    border-radius: 6px;
+    margin: 0;
+    font-size: 18px;
+}
+
+.styledtable {
+    position: absolute;
+    top: 25%;
+    right: 21%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+   
+    width: 78%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styledtable thead tr {
+    background-color: #f3f3f3;
+    color: var(--DarkBlue);
+    text-align: center;
+    font-weight:900 !important;
+}
+.styledtable th,
+.styledtable td {
+    padding: 12px 15px;
+    text-align: center;
+}
+.styledtable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+
+.styledtable tbody tr.active-row {
+    font-weight: bold;
+}
+.home {
+    position: absolute;
+    top:15%;
+    right:85%;
+    background-color: var(--PinkColor);
+    color: white;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    border-radius: 6px;
+    margin: 0;
+    font-size: 18px;
+}
+
+.arrow{
+    margin-right: 5px;
+    position: absolute;
+    bottom: 8.5px;
+    
+}
+
+.delete{
+    background-color: var(--PinkColor);
+    outline: none;
+     border: none;
+     padding-bottom: 5px;
+     padding-left: 5px;
+     padding-right: 20px;
+     padding-left: 20px;
+     border-radius: 5px;
+     color: white;
+}
+.submit:hover{
+    letter-spacing: 1px;
+   }
+   .submit:active{
+    box-shadow: none;
+    transform: scale(.9);
+   }

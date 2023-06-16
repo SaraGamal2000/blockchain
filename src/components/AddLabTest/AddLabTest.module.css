@@ -1,0 +1,109 @@
+.formParent{
+  
+    width: 50%;
+    height: 100vh;
+    padding-top: 60px;
+    padding-right: 30px;
+    padding-left: 40px;
+}
+.parent{
+    display: flex;
+}
+.label{
+    margin-bottom: 7px;
+}
+.parentOption{
+    padding-right: 50px;
+ 
+}
+.parentOption1{
+    margin-top: 20px;
+}
+.input{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #dedbdb;
+    outline: none;
+ 
+}
+.inputs{
+    display: inline-block;
+    margin-right: 50px;
+    margin-bottom: 25px;
+    width: 40%;
+}
+.options{
+    width: 94%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #dedbdb;
+    
+}
+
+input[type="option"]{
+    width: 100%;
+}
+.passwordInput{
+    margin-top: 30px;
+    padding-right: 47px;
+}
+
+
+.submit {
+    display: block;
+    text-align: center;
+    width: 87%;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--PinkColor);
+    color: white;
+    font-weight: 600;
+    margin-right: 50px;
+    margin-top: 30px;
+
+
+}
+
+.last{
+    text-align: center;
+    margin-top: 30px;
+
+}
+a:link{
+    text-decoration: none;
+    
+}
+.link{
+    color: var(--PinkColor);
+    margin-right: 10px;
+}
+
+.image{
+    width: 50%;
+   height: 100vh;
+  
+ 
+    
+}
+.image img {
+    max-width: 100%;
+    height: 100vh;
+  
+}
+
+.head{
+    font-size: 40px;
+    font-weight: 600;
+    color:var(--DarkBlue);
+    margin-bottom: 50px;
+    margin-right: 40px;
+}
+.submit:hover{
+    letter-spacing: 1px;
+   }
+   .submit:active{
+    box-shadow: none;
+    transform: scale(.9);
+   }

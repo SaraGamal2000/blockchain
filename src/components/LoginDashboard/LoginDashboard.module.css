@@ -1,0 +1,147 @@
+
+
+
+.submit:hover{
+    letter-spacing: 1px;
+   }
+   .submit:active{
+    box-shadow: none;
+    transform: scale(.9);
+   }
+
+.parent{
+    display: flex;
+}
+
+label{
+    color: var(--DarkBlue);
+}
+
+.formParent{
+    display: inline-block;
+    width: 50%;
+   height: 100vh;
+   
+   padding: 70px;
+   
+}
+
+.head{
+    font-size: 40px;
+    font-weight: 600;
+    color:var(--DarkBlue);
+    margin-bottom: 40px;
+}
+
+.text{
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #dedbdb;
+   ;
+    outline: none;
+   
+}
+.password{
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #dedbdb;
+   ;
+    outline: none;
+    
+   
+}
+.inputs{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.input{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #dedbdb;
+    outline: none;
+ 
+}
+.radioHead{
+    display: inline;
+    color: var(--DarkBlue);
+   
+    
+    
+}
+.radioParent{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.radioSection{
+   
+    
+   display: inline-block;
+   margin-right: 30px;
+    
+}
+
+.radioSection1{
+    margin-right: 300px;
+}
+
+.submit {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--PinkColor);
+    color: white;
+    font-weight: 600;
+
+}
+.last{
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+Link:hover{
+    text-decoration: underline;
+    color: var(--PinkColor);
+    
+}
+.link{
+    color: var(--PinkColor);
+    margin-right: 10px;
+}
+.image{
+    width: 50%;
+   height: 100vh;
+  
+ 
+    
+}
+.image img {
+    max-width: 100%;
+    height: 100vh;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
