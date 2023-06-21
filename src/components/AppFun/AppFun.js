@@ -1,11 +1,9 @@
 
-import cont from"./contracts/cont.json"
+import cont from"./build/cont.json"
 import React, {useEffect, useState} from 'react';
 import {ethers} from 'ethers';
 import {create} from "ipfs-http-client";
-//import Web3 from 'web3';
 import { Buffer } from "buffer";
-//const web3 = new Web3('HTTP://127.0.0.1:7545')
 const projectId = "2RIAVMz6xIsbR8GQDtfMfftJv56";
 const projectSecret = "722239f62cb74a25c4fc0d5798d2b5b9";
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64')
@@ -21,15 +19,16 @@ const ipsfClinet= create({
 const Fun_Contract=()=>{
 	
 	const abi=cont.abi;
-	const contractAddress='0x280c2E536D68c965082bEB0c25a448279Dc1F25E';
+	const contractAddress='0xe71739D0984696eABa87A49Ffc42482280384c6F';
 	const [out, setOut] = useState([]);
 	const [output, setOutput] = useState('');
 	const [urlfile,seturlfile]=useState();
 	const [hashfile,sethashfile]=useState();
+	const [scour,setscour]=useState(null);
 	const [Provider, setProvider] = useState(null);
 	const [Signer, setSigner] = useState(null);
 	const [Contract, setContract] = useState(null);
-    //const [Web3Api,setWeb3Api]=useState({web3:null})
+  
 	const [erroeMessage,seterroeMessage]=useState(null);
 	const [connectButtontext,setconnectButtontext]=useState('اتصل بحفظة الميتاماسك');
 	const [defaultAcount,setdefaultAcount]=useState(null);
@@ -56,28 +55,36 @@ const Fun_Contract=()=>{
 		}
 	
 ////////////////////////////////////////////////////////
-const remove =async(even) =>{
-	even.preventDefault();
+
+	const remove=async(event) =>
+	{
 		
-		let name_r = even.target.name_r.value;
-	try {
-	  const rem = await Contract.removeDNA(name_r).call({from:defaultAcount});
-	  await rem.wait();
-	  console.log('Transaction successful:', rem);
-	} 
-	catch (error) {
-	  console.error("this is error",error);
+			event.preventDefault();
+		
+		 let h = event.target.h.value;
+				try 
+				{
+				const rem = await Contract.removeDNA(h);
+				await rem.wait();
+				console.log('Transaction successful:', rem);
+				} 
+
+				catch (error)
+				{
+				console.error("this is error",error);
+				}
 	}
-  }
-  
+	useEffect((event)=>{
+		if(event){
+		remove();}
+  },[Contract])
 
 
 ////////////////////////////////////////
-// e.preventDefault();
-	// let h = e.target.h.value;
+
 const getsimiler =async(event) =>{
 	
-	//event.preventDefault();
+	event.preventDefault();
 	
 	let h = event.target.h.value;
 	try {
@@ -93,10 +100,36 @@ const getsimiler =async(event) =>{
 
   };
   useEffect(()=>{
-	getsimiler();
+	if(hashfile){
+	getsimiler();}
   },[Contract])
+
+//////////////////////////////////////////////
+const getScour =async(event) =>{
+	
+	event.preventDefault();
+	
+	let h1 = event.target.h1.value;
+	let h2 = event.target.h2.value;
+	try {
+	  let data = await Contract.calculateSimilarityScore(h1,h2);
+	  //await data.wait();
+	  console.log('Transaction successful:', data);
+	  setscour(data);
+	  return data;
+	} 
+	catch (error) {
+	  console.error("this is error",error);
+	}
+
+  };
+  useEffect((event)=>{
+	if (event&& event.preventDefault) {
+		getScour();}
+  },[Contract])
+
 /////////////////////////////////////////////////
-    const sethandler =async(event) => {
+    const upload =async(event) => {
 		event.preventDefault();
 		
 		let name = event.target.name.value;
@@ -113,7 +146,11 @@ const getsimiler =async(event) =>{
 			console.error('Transaction failed:',error);
 		}
 	
-	}
+	};
+	useEffect((event)=>{
+		if (event&& event.preventDefault) { 
+			upload(event);}
+	  },[Contract])
 
 	//////////////////////////////////////////////////////
 
@@ -192,33 +229,27 @@ const getsimiler =async(event) =>{
 	   </div>
 	   {erroeMessage}
         </div>
-
-
-
-
+		----------------------------------------------------------------------------
            <div> 
-            <h4>{"تفاعل مع البلوكتشين من خلال هذه الواجهة"}</h4>
+            <h6>{"تفاعل مع البلوكتشين من خلال هذه الواجهة"}</h6>
 
 			<div className="container">
-					<h5 >اضغط لكي ترفع ملفك علي منصة ipsf</h5>
+					<h6 >اضغط لكي ترفع ملفك علي منصة ipsf</h6>
 				<form >
-					
+				----------------------------------------------------------------------------
 					<input type="file" id="inputGroupFile02" className="form-control" onChange={onChange}></input>
 					<label className="input-group-text">   ipsfشارك ملفك علي منصة   </label>
 					
 				</form>
 			</div>
-
-
-
 			<div className='hash'>
 			    <h5>hash of current uploaded file :{hashfile}</h5>
 			</div>
 
-
+                --------------------------------------------------------------------------
 
             <div>
-				<form onSubmit={sethandler}>
+				<form onSubmit={upload}>
 				<ul>
 					<li><input type="Text"  id="name" /></li>
 					<li><input type="Text" id="hash"  /></li>
@@ -226,13 +257,14 @@ const getsimiler =async(event) =>{
 				</ul> 
 				</form>
 			</div>
-
+           ----------------------------------------------------------------------------
 		<div>
 			<form onSubmit={remove}>
 				<input type="Text"  id="name" />
 				<button type={"submit"}> removeDNAfiles</button>
 			</form>
 		</div>
+		----------------------------------------------------------------------------
 		<div>
 			<form onSubmit={getsimiler}>
 				<input type="Text" id="h"  />
@@ -242,25 +274,23 @@ const getsimiler =async(event) =>{
 			<p>similer_DNA_is: {out}</p>
 			</div>
 		</div>
-
-
-
-
-			{/* <form onSubmit={callretrieveDNA}>
+		----------------------------------------------------------------------------
+		<div>
+			<form onSubmit={getScour}>
 			<ul>
-				<li><input type="Text"  id="arg" /></li>
-                <button type={"submit"}> استدعي ملفك   </button>
-				<h5>ملفك: {funretrieveDNA}</h5>
-			</ul> 
+			<li><input type="Text" id="h1"  /></li>
+			<li><input type="Text" id="h2"  /></li>
+				<button type={"submit"}> getScourFiles</button>
+			</ul>
 			</form>
-			</div> */} 
+			<div className='Scour'>
+			<p>scour of these file = {scour}</p>
 			</div>
-{/* // for="inputGroupFile02" */}
-			
-
-			
+		</div>
+		</div>
 			</center>
         </div>
+		
     )
 }
 export default Fun_Contract; 
