@@ -66,8 +66,8 @@ module.exports = {
     //
     development: {
      host: "127.0.0.1",     // Localhost (default: none)
-     port:  7545,            // Standard Ethereum port (default: none)
-     network_id: "5777",       // Any network (default: none)
+     port: 7545,
+     network_id: "*",       // Any network (default: none)
     },
     //
     // An additional network, but with some advanced options…
@@ -97,7 +97,9 @@ module.exports = {
     //   production: true    // Treats this network as if it was a public net. (default: false)
     // }
   },
-
+//change the directory of the contracts
+contracts_directory:'./src/components/AppFun/contracts/',
+contracts_build_directory:'./src/components/AppFun/build/',
   // Set default mocha options here, use special reporters, etc.
   mocha: {
     // timeout: 100000
