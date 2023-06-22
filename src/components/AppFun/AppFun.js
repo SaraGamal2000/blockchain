@@ -205,6 +205,7 @@ const updateEthers = () => {
   return (
     <div>
       <center>
+	   <div>
         <div className="walletCard">
           <h4>'اربط محفظة الميتا ماسك بهذه الواجهة'</h4>
 
@@ -220,7 +221,7 @@ const updateEthers = () => {
         </div>
 
 		----------------------------------------------------------------------------
-           
+          <div> 
             <h6>{"تفاعل مع البلوكتشين من خلال هذه الواجهة"}</h6>
 
 			<div className="container">
@@ -266,59 +267,8 @@ const updateEthers = () => {
 			</div>
 		</div>
 		----------------------------------------------------------------------------
-		<div>
-			
-
-
-        <div>
-          <h4>{"تفاعل مع البلوكتشين من خلال هذه الواجهة"}</h4>
-
-          <div className="container">
-            <h5>اضغط لكي ترفع ملفك علي منصة ipsf</h5>
-            <form>
-              <input type="file" id="inputGroupFile02"className="form-control"onChange={onChange} ></input>
-              <label className="input-group-text">
-                {" "}
-                ipsfشارك ملفك علي منصة{" "}
-              </label>
-            </form>
-          </div>
-          <div className="hash">
-            <h5>hash of current uploaded file :{hashfile}</h5>
-          </div>
-
-          {/* <div>
-            <form onSubmit={sethandler}>
-              <ul>
-                <li>
-                  <input type="Text" id="name" />
-                </li>
-                <li>
-                  <input type="Text" id="hash" />
-                </li>
-                <button type={"submit"}> شارك ملفك </button>
-              </ul>
-            </form>
-          </div> */}
-
-          <div>
-            <form onSubmit={remove}>
-              <input type="Text" id="name" />
-              <button type={"submit"}> removeDNAfiles</button>
-            </form>
-          </div>
-   --------------------------------------------------------------
-          <div>
-            <form onSubmit={getsimiler}>
-              <input type="Text" id="h" />
-              <button type={"submit"}> getSimilarFiles</button>
-            </form>
-            <div className="similerfile">
-              <p>similer_DNA_is: {out}</p>
-            </div>
-          </div>
-
- --------------------------------------------------------         
+		
+         
           <form onSubmit={getScour}>
 			<ul>
 			<li><input type="Text" id="h1"  /></li>
@@ -330,9 +280,9 @@ const updateEthers = () => {
 			<p>scour of these file = {scour}</p>
 			</div>
 		</div>
-		</div>
-			</center>
-        </div>
+	  </div>
+	</center>
+ </div>
   )
 }
 export default Fun_Contract;
